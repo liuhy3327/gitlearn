@@ -1,0 +1,78 @@
+trello账号 liuhaoyi@aicaigroup.com 密码：Liuhy3327
+邮箱账号 : liuhaoyi@aicaigroup.com 密码：Liuhy3327
+mysql地址IP：192.168.4.100  用户：axddba 密码：Jm3K7TNU286rwvd
+0A的PC端地址  http://oa.aicaigroup.com:8080/   账号：3327（员工编号） 密码：身份证末六位
+ssh服务器:122.225.68.73 端口:9500  密码 QEVMiY4789S9d3gdWjd9
+github liuhy3327  liuhaoyi@aicaigroup.com ayi123456
+jira http://122.225.68.74:8082/browse/RISK-394  密码1234567a
+
+hadoop界面 http://emr-header-1:8099/cluster
+黄敏IP：10.10.11.154
+大数据wiki http://192.168.4.100:8090/pages/viewpage.action?pageId=2827397
+
+线上环境 plink.exe -C -N -D 7070 root@121.40.100.30 -P 9500 -pw PlEyqQI(iag3dd0muzmO -v
+嘉兴环境 plink.exe -C -N -D 7070 root@122.225.68.73 -P 9500 -pw QEVMiY4789S9d3gdWjd9 -v
+浩特跳板机 plink.exe -C -N -D 7070 yehaote@121.40.117.92 -P 9500 -pw yehaote!@#2017 -v
+plink.exe -C -N -D 7070 god@101.37.14.175 -P 9500 -pw SL3DizUqxZK -v
+
+
+
+这里提供一个greenVPN:登录http://jsq.re 账户名:kongkong1 密码:axdvpn2016
+开发环境 'USER': 'aicaireport', 'PASSWORD': '1qaz2wsx', 'HOST':'192.168.4.100'
+
+hadoop文件提取目录 http://emr-header-1:50070/explorer.html
+
+
+线上环境   ssh服务器： 121.40.100.30:9500 root PlEyqQI(iag3dd0muzmO  mysql： rdsih75y77pvofod0113.mysql.rds.aliyuncs.com  aicaidbaliuhy gtR95UkmE48J5bF
+
+zeepelin 访问地址：http://gaia-1:9800/#/   101.37.14.175    gaia-1.aicaigroup.com  gaia-1
+emr地址 http://emr-header-1:8080/#/notebook/2C2VR915E
+web地址 http://web006:8080
+
+层次  
+业务层->src（增量） ->ods（全量）
+src->dw（注册量 实名 授信）->dm  （事实数据,集市） 
+ods->dim（静态数据）（维度表）共享
+
+
+
+
+cinfluence：地址 http://192.168.4.100:8090/pages/viewpage.action?pageId=1017006   liuhaoyi@aiyoumi.com 123456
+git地址：http://dev.guang.com:9800  liuhaoyi@aicaigroup.com  liuhy3327
+atlassian账号liuhaoyi@aicaigroup.com  liuhy3327
+
+代码目录 C:\Users\admin\Documents\cloud-project\cloud-task-project\cloud-task-calculate\src\main\scala\aicai\task\calculate\service
+
+user_id是aicai_user.user的id 表中也有userinfo_id的信息
+userinfo_id是aicai_user.user_info表的id
+
+
+TrasToOdsSingleTableAction   src->ods
+
+--建表语句
+CREATE TABLE `dim_location_tel`(
+  `telphone` string, 
+  `region` string
+  )
+ROW FORMAT SERDE 
+  'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' 
+WITH SERDEPROPERTIES ( 
+  'colelction.delim'='\u0002', 
+  'field.delim'='\u0001', 
+  'line.delim'='\n', 
+  'mapkey.delim'='\u0003', 
+  'serialization.format'='\u0001') 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+TBLPROPERTIES (
+  'last_modified_by'='hadoop', 
+  'last_modified_time'='1478227411', 
+  'numFiles'='200', 
+  'totalSize'='1461353754', 
+  'transient_lastDdlTime'='1487781602')
+
+
+
+
